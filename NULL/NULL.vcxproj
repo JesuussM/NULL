@@ -25,6 +25,7 @@
     <ClInclude Include="src\engine\renderer.h" />
     <ClInclude Include="util\sokol_app.h" />
     <ClInclude Include="util\sokol_gfx.h" />
+    <ClInclude Include="util\sokol_gl.h" />
     <ClInclude Include="util\sokol_glue.h" />
     <ClInclude Include="util\sokol_log.h" />
     <ClInclude Include="util\vecmath.h" />
@@ -153,6 +154,3 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
-
-
-

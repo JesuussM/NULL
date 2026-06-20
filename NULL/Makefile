@@ -1,6 +1,7 @@
 CC = gcc
 
-CFLAGS = -Iutil -Isrc -Isrc/engine
+# Includes
+CFLAGS = -Iutil -Isrc -Isrc/engine -Isrc/assets/shaders
 
 LIBS = -ld3d11 -ldxgi -ldxguid -lgdi32 -luser32 -lshell32 -lole32
 

@@ -10,20 +10,16 @@
 
 void init() 
 {
-	// Initialize graphics
-	sg_setup(&(sg_desc) {
-		.environment = sglue_environment(),
-			.logger.func = slog_func,
-	});
+	renderer_init();
 }
 
 void frame()
 {
+	renderer_draw();
 }
 
 void cleanup() 
 {
-	renderer_shutdown();
 	sg_shutdown();
 }
 

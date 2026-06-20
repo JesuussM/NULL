@@ -36,5 +36,8 @@
     <ClInclude Include="util\vecmath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="util\sokol_gl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
