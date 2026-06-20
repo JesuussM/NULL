@@ -1,25 +1,30 @@
-#define SOKOL_IMPL
-#define SOKOL_D3D11
-
-#include <stdio.h>
 #include "sokol_app.h"
 #include "sokol_gfx.h"
 #include "sokol_glue.h"
 #include "sokol_log.h"
+
+#include <stdio.h>
+
 #include "renderer.h"
+#include "gui.h"
 
 void init() 
 {
 	renderer_init();
+	gui_init();
 }
 
 void frame()
 {
 	renderer_draw();
+	gui_show_window();
+	sg_end_pass();
+	sg_commit();
 }
 
 void cleanup() 
 {
+	gui_shutdown();
 	sg_shutdown();
 }
 
@@ -33,6 +38,8 @@ void event(const sapp_event* event)
 			sapp_quit();
 		}
 	}
+
+	gui_input(event);
 }
 
 // Open window

@@ -1,7 +1,8 @@
+#define SOKOL_LOG_IMPL
+#include "sokol_log.h"
 #include "renderer.h"
 #include "sokol_gfx.h"
 #include "sokol_glue.h"
-#include "sokol_log.h"
 #include "triangle.glsl.h"
 
 static struct
@@ -65,6 +66,9 @@ void renderer_draw() {
 	sg_apply_pipeline(state.pipeline);
 	sg_apply_bindings(&state.bindings);
 	sg_draw(0,3,1);
-	sg_end_pass();
-	sg_commit();
+}
+
+sg_pass_action* renderer_get_pass_action()
+{
+	return &state.pass_action;
 }
