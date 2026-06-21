@@ -20,7 +20,8 @@ INCLUDES = \
 	-I$(ASSETS_DIR) \
 	-I$(SHADERS_DIR) \
 	-I$(UTIL_DIR) \
-	-I$(IMGUI_DIR)
+	-I$(IMGUI_DIR) \
+	-I$(UTIL_DIR)/cglm/cglm-master/include
 
 # Compiler flags
 CFLAGS = -Wall -Wextra -g $(INCLUDES)

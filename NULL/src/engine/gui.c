@@ -11,7 +11,7 @@ static bool show_demo = false;
 
 void gui_init() 
 {
-	// Initalize ImGui
+	// Initialize ImGui
 	simgui_setup(&(simgui_desc_t) {0});
 }
 
@@ -19,9 +19,9 @@ void gui_show_window()
 {
 	simgui_new_frame(&(simgui_frame_desc_t) {
 		.width = sapp_width(),
-			.height = sapp_height(),
-			.delta_time = sapp_frame_duration(),
-			.dpi_scale = sapp_dpi_scale(),
+		.height = sapp_height(),
+		.delta_time = sapp_frame_duration(),
+		.dpi_scale = sapp_dpi_scale(),
 	});
 
 	// General gui window
