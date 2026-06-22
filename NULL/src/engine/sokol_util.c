@@ -9,6 +9,9 @@
 #define SOKOL_GLUE_IMPL
 #include "sokol_glue.h"
 
+#define SOKOL_TIME_IMPL
+#include "sokol_time.h"
+
 #define CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 #include "cimgui.h"
 

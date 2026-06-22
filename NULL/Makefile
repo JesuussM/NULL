@@ -36,6 +36,7 @@ C_SRC = \
 	$(ENGINE_DIR)/sokol_util.c \
 	$(ENGINE_DIR)/renderer.c \
 	$(ENGINE_DIR)/gui.c \
+	$(ENGINE_DIR)/globals.c \
 
 CPP_SRC = \
 	$(IMGUI_DIR)/cimgui.cpp \
