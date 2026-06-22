@@ -9,6 +9,7 @@
 
 #include "renderer.h"
 #include "gui.h"
+#include "camera.h"
 #include "globals.h"
 
 void init() 
@@ -18,6 +19,8 @@ void init()
 	start_time = stm_now();
 	last_time = stm_now();
 
+	camera_init();
+	sapp_lock_mouse(true);
 	renderer_init();
 	gui_init();
 }
@@ -28,6 +31,7 @@ void frame()
 	uint64_t ticks = stm_laptime(&last_time);
 	delta_time = (float)stm_sec(ticks);
 
+	camera_frame();
 	renderer_draw();
 	gui_show_window();
 	sg_end_pass();
@@ -43,9 +47,10 @@ void cleanup()
 void event(const sapp_event* event)
 {
 	if (event->type == SAPP_EVENTTYPE_FOCUSED) sapp_lock_mouse(true);
-		// If ESC is pressed, quit
+	// If ESC is pressed, quit
 	if (event->key_code == SAPP_KEYCODE_ESCAPE) sapp_quit();
 
+	camera_input(event);
 	gui_input(event);
 	DEBUG_TOGGLE(event);
 }
